@@ -23,7 +23,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.projects.create');
     }
 
     /**
@@ -31,16 +31,18 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'ciao';
     }
+
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        return view('admin.projects.show', compact('project'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

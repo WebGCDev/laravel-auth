@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+<button class="btn btn-primary m-2">
+          <a class="text-white text-decoration-none" href="{{ route('admin.projects.create')}}">CREATE</a>
+</button>
+
  <table class="table">
   <thead>
     <tr>
