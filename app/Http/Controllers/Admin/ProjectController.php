@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProjectRequest;
 use App\Models\Project;
+use Dflydev\DotAccessData\Data;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -29,9 +31,24 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+   public function store(StoreProjectRequest $request)
     {
-        return 'ciao';
+        $data = $request->validated();
+        
+        $project = new Project();
+        $project->title = $data['title'];
+        $project->slug = Str::of($data['title'])->slug('-');
+        $project->author = $data['author'];
+        $project->description = $data['description'];
+        $project->creation_date = $data['creation_date'] ;
+        $project->last_update = $data['last_update'];
+        $project->contributors = $data['contributors'];
+        $project->lang = $data['lang'];
+        $project->link_github = $data['link_github'];
+
+        $project->save();
+        
+        return redirect()->route('admin.projects.index');
     }
 
 
