@@ -25,3 +25,10 @@ Iniziamo con il definire il layout, modello, migrazione, controller e rotte nece
 Bonus:
 
 Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo richiedono usando due form requests.
+
+### 07-02-2024
+
+Completa la parte di CRUD (Create, Read, Update, Delete).
+
+Poi, concentratevi sulla personalizzazione e migliorate la User Experience aggiungendo notifiche relative alle azioni compiute (record aggiornato / modificato / cancellato correttamente).
+Approfittatene anche per fare un refactor del vostro layout, utilizzando @include per eventuali parti di codice che si ripetono (vedi messaggi di notifica e di errore).
