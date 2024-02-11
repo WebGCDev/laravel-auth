@@ -24,13 +24,16 @@
       <td>{{$project->title}}</td>
       <td>{{$project->lang}}</td>
       <td class="text-center">
-        <button class="btn  btn-primary btn-success ">
+        <button class="btn  btn-secondary">
           <a class="text-white text-decoration-none " href="{{$project->link_github}}"><i class="fa-brands fa-github"></i></a>
         </button>
       </td>
-      <td class="text-center" >
-        <button class="btn btn-primary btn-info">
+      <td class="text-center d-flex gap-1" >
+        <button class="btn btn-info">
           <a class="text-white text-decoration-none" href="{{ route('admin.projects.show', $project->id)}}">INFO</a>
+        </button>
+        <button class="btn btn-success">
+          <a class="text-white text-decoration-none" href="{{ route('admin.projects.edit', $project->id)}}">Edit</a>
         </button>
       </td>
     </tr>
